@@ -1,0 +1,66 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+}
+.values__container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 auto;
+}
+.values-title-text__container {
+    width: 65%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2.9%;
+}
+.values__title {
+    font-family: "Ubuntu";
+    font-size: 2.875em;
+    color: #1E212C;
+    font-weight: bold;
+    line-height: 130%;
+    margin-bottom: 2%;
+}
+.values-title__text {
+    font-size: 1.125em;
+    color: #787A80;
+    line-height: 130%;
+}
+.values-all-cards__container {
+    width: 64%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: start;
+    gap: 15%;
+}
+.values-card__container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 23%;
+}
+.values-card-text__container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    width: 100%;
+}
+.values-card__title {
+    color: #1E212C;
+    font-size: 1.25em;
+    line-height: 150%;
+}
+.values-card__text {
+    line-height: 160%;
+    color: #787A80;
+    font-size: 1em;
+    width: 100%;
+    text-align: center;
+    font-weight: 400;
+}

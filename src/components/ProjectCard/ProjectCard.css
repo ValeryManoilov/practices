@@ -1,0 +1,89 @@
+.projects-card__button{
+    border: 1px solid #FF5A30;
+    padding: 10px 32px;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-top: 24px;
+    margin: auto;
+    margin-top: 24px;
+    display: none;
+    opacity: 0;
+}
+.projects-card__container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+}
+.projects-card__button>p{
+    font-family: "Ubuntu";
+    font-size: 0.875em;
+    font-weight: bold;
+    color: #FF5A30;
+}
+.projects-card__img{
+    cursor: pointer;
+}
+.projects-card-text__container {
+    position: absolute;
+    top: 100%;
+    left: auto;
+    text-align: center;
+    width: 100%;
+    height: auto;
+    background-color: white;
+    padding: 16px 0 24px 0;
+    transition: all 0.3s;
+    z-index: 0;
+}
+/* .projects-card-text__container:hover {
+    top: 274px;
+    padding: 16px 20px 92px 20px;
+    box-shadow: 0px 80px 80px -20px rgba(154, 156, 165, 0.2);
+    cursor: pointer;
+} */
+
+.projects-card__img:hover ~ .projects-card-text__container
+{
+    top: 70.2%;
+    padding: 16px 0 92px 0;
+    box-shadow: 0px 80px 80px -20px rgba(154, 156, 165, 0.2);
+    cursor: pointer;
+}
+
+.projects-card-text__container:hover{
+    top: 70.2%;
+    padding: 16px 0 92px 0;
+    box-shadow: 0px 80px 80px -20px rgba(154, 156, 165, 0.2);
+}
+
+.projects-card-text__container:hover>.projects-card__button{
+    display: block;
+    opacity: 1;
+}
+
+.projects-card__img{
+    width: 100%;
+}
+
+.projects-card__img:hover ~ .projects-card-text__container>.projects-card__button{
+    display: block;
+    opacity: 1;
+}
+
+.projects-card__title {
+    font-size: 1.25em;
+    font-family: "Ubuntu";
+    font-weight: bold;
+    line-height: 30px;
+}
+.projects-card__text {
+    font-size: 0.875em;
+    font-family: "Ubuntu";
+    line-height: 21px;
+}
+
+
+
+
+
