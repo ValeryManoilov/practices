@@ -1,15 +1,20 @@
 import styled from "styled-components";
-import descImg from "../../assets/images/descImg.jpg";
+import descImg1 from "../../assets/images/descImg1.jpg";
+import descImg2 from "../../assets/images/descImg2.jpg";
+import descImg3 from "../../assets/images/descImg3.jpg";
+import descImg4 from "../../assets/images/descImg4.jpg";
 import Arrow from "../Arrows/Arrow";
+import { useState } from "react";
 
 export const DescribingContainer = styled.div`
-    background-image: url("${descImg}");
-    width: 100%;
+    background-image: url("${props => props.back}");
+    width: 1920px;
     height: 988px;
     background-size: cover;
     display: flex;
     flex-direction: row;
     justify-content: center;
+    transition: all 0.5s;
 `
 
 export const Content = styled.div`
@@ -109,7 +114,7 @@ export const SliderElement = styled.div`
     padding-bottom: 1.65%;
     width: 24.6%;
     line-height: 150%;
-    opacity: 0.5;
+    opacity: ${(props) => (props.num == props.backnum ? 1 : 0.5)};
     cursor: pointer;
     transition: all 0.4s;
     &:focus
@@ -121,10 +126,33 @@ export const SliderElement = styled.div`
 
 function CompanyDescribing()
 {
+    const [back, setBack] = useState(0)
+
+    let photos = [
+        descImg1,
+        descImg2,
+        descImg3,
+        descImg4
+    ]
+
+    function settingBack(slideVector)
+    {
+        switch(slideVector)
+        {
+            case("left"):
+                if ( back == 0 ) { setBack(3) } else { setBack(back-1) }
+                break
+            case("right"):
+                if ( back == 3 ) { setBack(0) } else { setBack(back+1) }
+                break
+            default:
+                break
+        }
+    }
     return(
-        <DescribingContainer>
+        <DescribingContainer back={photos[back]}>
             <Content>
-                <LeftArrow>
+                <LeftArrow onClick={() => settingBack("left")}>
                     <Arrow vector="left" backgroundColorActive="#FFFFFF"/>
                 </LeftArrow>
                 <LeadElements>
@@ -148,13 +176,13 @@ function CompanyDescribing()
                         </ButtonsContainer>
                     </Information>
                     <SlidersContainer>
-                        <SliderElement tabIndex={0}>01</SliderElement>
-                        <SliderElement tabIndex={0}>02</SliderElement>
-                        <SliderElement tabIndex={0}>03</SliderElement>
-                        <SliderElement tabIndex={0}>04</SliderElement>
+                        <SliderElement tabIndex={0} num={1} backnum={back + 1}>01</SliderElement>
+                        <SliderElement tabIndex={0} num={2} backnum={back + 1}>02</SliderElement>
+                        <SliderElement tabIndex={0} num={3} backnum={back + 1}>03</SliderElement>
+                        <SliderElement tabIndex={0} num={4} backnum={back + 1}>04</SliderElement>
                     </SlidersContainer>
                 </LeadElements>
-                <RightArrow>
+                <RightArrow onClick={() => settingBack("right")}>
                     <Arrow vector="right" backgroundColorActive="#FFFFFF"/>
                 </RightArrow>
             </Content>
